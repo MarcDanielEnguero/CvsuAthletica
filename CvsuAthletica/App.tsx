@@ -1,10 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
+import backgroundImage from './assets/img/bg.jpg'; // Your background image
+import { MdEmail } from "react-icons/md";
+import { FcGoogle } from "react-icons/fc"; // Import the Google icon
 
 export default function App() {
   return (
     <ImageBackground
-      source={{ uri: 'bg_img_url' }}
+      source={backgroundImage}
       style={styles.background}
     >
       <View style={styles.overlay}>
@@ -35,15 +38,25 @@ export default function App() {
           
           <Text style={styles.orText}>Or With</Text>
           
+          {/* Login with Google Button */}
           <TouchableOpacity style={styles.googleLoginButton}>
-            <Text style={styles.googleLoginButtonText}>Login with CvSU Email</Text>
+            <View style={styles.iconTextContainer}>
+            <FcGoogle style={styles.icon} />
+            <Text style={styles.googleLoginButtonText}>Login with Google</Text>
+            </View>
           </TouchableOpacity>
         </View>
       </View>
       
       <View style={styles.footer}>
-        <Text style={styles.footerText}>csgmain@cvsu.edu.ph</Text>
-        <Text style={styles.footerText}>cvsu.cspear.sc@cvsu.edu.ph</Text>
+        <View style={styles.footerItem}>
+          <MdEmail style={styles.emailIcon} />
+          <Text style={styles.footerText}>csgmain@cvsu.edu.ph</Text>
+        </View>
+        <View style={styles.footerItem}>
+          <MdEmail style={styles.emailIcon} />
+          <Text style={styles.footerText}>cvsu.cspear.sc@cvsu.edu.ph</Text>
+        </View>
       </View>
     </ImageBackground>
   );
@@ -58,8 +71,8 @@ const styles = StyleSheet.create({
   overlay: {
     flex: 1,
     backgroundColor: 'rgba(0, 0, 0, 0.6)', // Dark overlay
-    justifyContent: 'center', // Centers the content vertically
-    alignItems: 'center', // Centers the content horizontally
+    justifyContent: 'center',
+    alignItems: 'center',
     paddingHorizontal: 20,
   },
   logoContainer: {
@@ -67,26 +80,25 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   logoText: {
-    color: '#FFD700', // Gold color
+    color: '#FFD700',
     fontSize: 30,
     fontWeight: 'bold',
   },
   formContainer: {
-    width: '85%', // Smaller width for the login form
-    maxWidth: 320, // Limit width on larger devices
-    backgroundColor: 'rgba(128, 0, 0, 0.8)', // Dark red form background
+    width: '85%',
+    maxWidth: 320,
+    backgroundColor: 'rgba(128, 0, 0, 0.8)',
     borderRadius: 10,
-    padding: 15, // Adjust padding to fit smaller container
+    padding: 15,
     alignItems: 'center',
-    justifyContent: 'center', // Center contents inside the form
   },
   input: {
     width: '100%',
-    height: 45, // Reduced height for inputs
+    height: 45,
     borderColor: '#ccc',
     borderWidth: 1,
     borderRadius: 5,
-    marginVertical: 8, // Adjusted vertical margin
+    marginVertical: 8,
     paddingHorizontal: 10,
     color: '#fff',
   },
@@ -96,9 +108,9 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   loginButton: {
-    backgroundColor: '#8B4513', // Brown button color
+    backgroundColor: '#8B4513',
     borderRadius: 5,
-    paddingVertical: 12, // Reduced button padding
+    paddingVertical: 12,
     width: '100%',
     alignItems: 'center',
     marginVertical: 10,
@@ -119,21 +131,42 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     marginVertical: 10,
+    flexDirection: 'row', // Aligns items horizontally
+    justifyContent: 'center',
+  },
+  iconTextContainer: {
+    flexDirection: 'row', // Ensures icon and text are in a row
+    alignItems: 'center', // Align items vertically
+  },
+  icon: {
+    fontSize: 20, // Adjust icon size
+    marginRight: 8, // Space between icon and text
   },
   googleLoginButtonText: {
     color: '#000',
     fontSize: 16,
     fontWeight: 'bold',
   },
+  
   footer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
+    flexDirection: 'row', // Align items horizontally in a row
+    justifyContent: 'center', // Center the items
+    alignItems: 'center', // Align items vertically
     paddingVertical: 10,
     backgroundColor: '#330000',
+  },
+  footerItem: {
+    flexDirection: 'row', // Align icon and text horizontally
+    alignItems: 'center', // Align items vertically
+    marginHorizontal: 10, // Space between the email entries
+  },
+  emailIcon: {
+    fontSize: 18, // Size of the email icon
+    color: '#fff', // Color of the icon
+    marginRight: 8, // Space between icon and text
   },
   footerText: {
     color: '#fff',
     fontSize: 12,
   },
 });
-
