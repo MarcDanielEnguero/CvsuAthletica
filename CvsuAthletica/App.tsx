@@ -57,9 +57,10 @@ const styles = StyleSheet.create({
   },
   overlay: {
     flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.6)', // Dark overlay to make form pop
+    backgroundColor: 'rgba(0, 0, 0, 0.6)', // Dark overlay
+    justifyContent: 'center', // Centers the content vertically
+    alignItems: 'center', // Centers the content horizontally
     paddingHorizontal: 20,
-    justifyContent: 'center',
   },
   logoContainer: {
     alignItems: 'center',
@@ -71,30 +72,33 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   formContainer: {
+    width: '85%', // Smaller width for the login form
+    maxWidth: 320, // Limit width on larger devices
     backgroundColor: 'rgba(128, 0, 0, 0.8)', // Dark red form background
     borderRadius: 10,
-    padding: 20,
+    padding: 15, // Adjust padding to fit smaller container
     alignItems: 'center',
+    justifyContent: 'center', // Center contents inside the form
   },
   input: {
     width: '100%',
-    height: 50,
+    height: 45, // Reduced height for inputs
     borderColor: '#ccc',
     borderWidth: 1,
     borderRadius: 5,
-    marginVertical: 10,
+    marginVertical: 8, // Adjusted vertical margin
     paddingHorizontal: 10,
     color: '#fff',
   },
   forgotPassword: {
     color: '#FFD700',
     alignSelf: 'flex-end',
-    marginVertical: 10,
+    marginVertical: 5,
   },
   loginButton: {
     backgroundColor: '#8B4513', // Brown button color
     borderRadius: 5,
-    paddingVertical: 15,
+    paddingVertical: 12, // Reduced button padding
     width: '100%',
     alignItems: 'center',
     marginVertical: 10,
@@ -111,7 +115,7 @@ const styles = StyleSheet.create({
   googleLoginButton: {
     backgroundColor: '#fff',
     borderRadius: 5,
-    paddingVertical: 15,
+    paddingVertical: 12,
     width: '100%',
     alignItems: 'center',
     marginVertical: 10,
@@ -132,3 +136,4 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
 });
+
