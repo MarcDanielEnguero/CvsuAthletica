@@ -36,7 +36,7 @@ export default function App() {
             <Text style={styles.loginButtonText}>LOGIN</Text>
           </TouchableOpacity>
           
-          <Text style={styles.orText}>Or With</Text>
+          <Text style={styles.orText}>━━━━━ Or With ━━━━━</Text>
           
           {/* Login with Google Button */}
           <TouchableOpacity style={styles.googleLoginButton}>
